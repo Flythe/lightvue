@@ -17,8 +17,10 @@
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.5",
+    "cross-env": "^7.0.3",
     "fs-extra": "^9.1.0",
     "node-sass": "^5.0.0",
+    "postcss": "^8.4.31",
     "prettier": "^2.2.1",
     "release-it": "12.6.3",
     "rollup": "^2.36.1",
@@ -33,5 +35,6 @@
   },
   "engines": {
     "node": ">=6 <15.0.0"
-  }
+  },
+  "dependencies": {}
 }
