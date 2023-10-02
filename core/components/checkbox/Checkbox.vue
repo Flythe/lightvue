@@ -230,6 +230,6 @@ export default {
   },
 };
 </script>
-<style lang="sass">
-@import './Checkbox.scss'
+<style lang="scss">
+@import './Checkbox.scss';
 </style>

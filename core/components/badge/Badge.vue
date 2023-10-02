@@ -39,6 +39,6 @@ export default {
   },
 };
 </script>
-<style lang="sass">
-@import './badge.scss'
+<style lang="scss">
+@import './badge.scss';
 </style>

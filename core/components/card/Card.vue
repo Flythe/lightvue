@@ -43,6 +43,6 @@ export default {
   },
 };
 </script>
-<style lang="sass">
-@import './card.scss'
+<style lang="scss">
+@import './card.scss';
 </style>
