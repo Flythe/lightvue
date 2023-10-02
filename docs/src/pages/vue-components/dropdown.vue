@@ -20,7 +20,7 @@ import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import DropdownAPI from 'lightvueDocs/example/dropdown/DropdownAPI';
-import { COMPONENT_STATUS } from '@/static/data/constant.ts';
+import { COMPONENT_STATUS } from '@/public/data/constant.ts';
 
 export default {
   head: {

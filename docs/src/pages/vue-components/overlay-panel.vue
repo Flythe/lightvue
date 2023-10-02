@@ -15,7 +15,7 @@ import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import OverlayPanelAPI from 'lightvueDocs/example/overlay-panel/OverlayPanelAPI';
-import { COMPONENT_STATUS } from '@/static/data/constant.ts';
+import { COMPONENT_STATUS } from '@/public/data/constant.ts';
 
 export default {
   head: {

@@ -1,22 +1,17 @@
-import Vue from 'vue';
 import LvInput from 'lightvue/input';
 import LvButton from 'lightvue/button';
 import LvCard from 'lightvue/card';
-import VueGtag from 'vue-gtag';
 import LvToast from 'lightvue/toast';
 import LvCollapsible from 'lightvue/collapsible';
 import LvNotification from 'lightvue/notification';
 
-Vue.use(VueGtag, {
-  config: { id: 'G-NSCV9YG71N' },
-  appName: 'lightvue-nuxt',
-});
+export default defineNuxtPlugin((nuxtApp) => {
+    nuxtApp.vueApp.use(LvToast);
+    nuxtApp.vueApp.use(LvNotification);
 
-Vue.use(LvToast);
-Vue.use(LvNotification);
-
-Vue.component('LvInput', LvInput);
-Vue.component('LvButton', LvButton);
-Vue.component('LvCard', LvCard);
-Vue.component('LvCollapsible', LvCollapsible);
-Vue.prototype.$lightvue = { ripple: true };
+    nuxtApp.vueApp.component('LvInput', LvInput);
+    nuxtApp.vueApp.component('LvButton', LvButton);
+    nuxtApp.vueApp.component('LvCard', LvCard);
+    nuxtApp.vueApp.component('LvCollapsible', LvCollapsible);
+    nuxtApp.vueApp.provide('$lightvue', { ripple: true });
+})

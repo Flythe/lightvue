@@ -26,6 +26,7 @@ import AppFooter from '@/components/AppFooter.vue';
 
 export default {
   scrollToTop: true,
+  inject: [ '$lightvue' ],
   components: {
     AppHeader,
     AppNavigationDrawer,

@@ -41,8 +41,10 @@
 <script>
 import AppDropdown from './AppDropdown.vue';
 export default {
-  components: { AppDropdown },
+  inject: [ '$lightvue' ],
+  components: { AppDropdown }
 };
+
 </script>
 
 <style scoped lang="scss">
