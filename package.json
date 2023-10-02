@@ -34,5 +34,6 @@
     "vue-template-compiler": "^2.7.14"
   },
   "engines": {},
-  "dependencies": {}
+  "dependencies": {},
+  "license": "UNLICENSED"
 }
