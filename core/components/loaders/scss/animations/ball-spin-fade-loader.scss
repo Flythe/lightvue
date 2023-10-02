@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '../variables';
 @import '../mixins';
 @import '../functions';
@@ -18,8 +20,8 @@ $radius: 25px;
 @mixin ball-spin-fade-loader($n:8, $start:1) {
   @for $i from $start through $n {
     > div:nth-child(#{$i}) {
-      $iter: 360 / $n;
-      $quarter: ($radius / 2) + ($radius / 5.5);
+      $iter: math.div(360, $n);
+      $quarter: ($radius * 0.5) + math.div($radius, 5.5);
 
       @if $i == 1 {
         top: $radius;

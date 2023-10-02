@@ -30,7 +30,7 @@ $size: 60px;
   @include ball-scale-multiple();
 
   position: relative;
-  transform: translateY(-$size / 2);
+  transform: translateY(-$size * 0.5);
 
   > div {
     @include balls();

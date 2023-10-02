@@ -5,10 +5,10 @@ $amount: 30px;
 
 @keyframes ball-zig {
   33% {
-    transform: translate(-$amount/2, -$amount);
+    transform: translate(-$amount*0.5, -$amount);
   }
   66% {
-    transform: translate($amount/2, -$amount);
+    transform: translate($amount*0.5, -$amount);
   }
   100% {
     transform: translate(0, 0);
@@ -17,10 +17,10 @@ $amount: 30px;
 
 @keyframes ball-zag {
   33% {
-    transform: translate($amount/2, $amount);
+    transform: translate($amount*0.5, $amount);
   }
   66% {
-    transform: translate(-$amount/2, $amount);
+    transform: translate(-$amount*0.5, $amount);
   }
   100% {
     transform: translate(0, 0);
@@ -29,14 +29,14 @@ $amount: 30px;
 
 .ball-zig-zag {
   position: relative;
-  transform: translate(-$amount / 2, -$amount / 2);
+  transform: translate(-$amount * 0.5, -$amount * 0.5);
 
   > div {
     @include balls();
     @include global-animation();
 
     position: absolute;
-    margin-left: $amount / 2;
+    margin-left: $amount * 0.5;
     top: 4px;
     left: -7px;
 
