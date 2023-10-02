@@ -19,7 +19,7 @@ import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import DrawerAPI from 'lightvueDocs/example/drawer/DrawerAPI';
 import DrawerBestDemo from 'lightvueDocs/example/drawer/DrawerBestDemo.vue';
-import { COMPONENT_STATUS } from '@/public/data/constant.ts';
+import { COMPONENT_STATUS } from '@/constant.ts';
 
 export default {
   head: {

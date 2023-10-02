@@ -1,13 +1,8 @@
 import vue from 'rollup-plugin-vue';
-// import postcss from 'rollup-plugin-postcss';
 import scss from 'rollup-plugin-scss';
 import filesize from 'rollup-plugin-filesize';
-// import commonjs from 'rollup-plugin-commonjs';
 
 import terser from '@rollup/plugin-terser';
-
-// const fs = require('fs-extra');
-// const path = require('path');
 
 let entries = [];
 
@@ -47,12 +42,7 @@ const baseConfig = {
       scss({
         output: 'dist/lightvue.css',
         outputStyle: 'compressed',
-      }),
-      // postcss({
-      //   extract: true,
-      //   // Or with custom file name, it will generate file relative to bundle.js in v3
-      //   // extract: 'dist/my-custom-file-name.css'
-      // }),
+      })
     ],
     postVue: [
       terser(),
@@ -151,14 +141,6 @@ function addEntry(inFolder, inFile, outFolder, outFile) {
 }
 
 function addSFC() {
-  // fs.readdirSync(path.resolve(__dirname, '../core/')).forEach(folder => {
-  //     fs.readdirSync(path.resolve(__dirname, '../core/' + folder)).forEach(file => {
-  //         let name = file.split(/(.vue)$|(.js)$/)[0].toLowerCase();
-  //         if (/\.vue$/.test(file) && (name === folder)) {
-  //             addEntry(folder, file, name);
-  //         }
-  //     });
-  // });
   addEntry('components/badge', 'index.js', 'badge', 'index');
   addEntry('components/button', 'index.js', 'button', 'index');
   addEntry('components/card', 'index.js', 'card', 'index');
@@ -194,34 +176,13 @@ function addDirectives() {
   addEntry('directives/ripple', 'index.js', 'ripple', 'index');
 }
 
-// function addConfig() {
-//     addEntry('config', 'lightVue.js', 'config');
-// }
-
 function addUtils() {
   addEntry('mixins', 'index.js', 'mixins', 'index');
   addEntry('utils', 'index.js', 'utils', 'index');
 }
 
-// function addApi() {
-//     addEntry('api', 'Api.js', 'api');
-// }
-
-// function addServices() {
-//     addEntry('confirmationservice', 'ConfirmationService.js', 'confirmationservice');
-//     addEntry('confirmationeventbus', 'ConfirmationEventBus.js', 'confirmationeventbus');
-//     addEntry('useconfirm', 'UseConfirm.js', 'useconfirm');
-//     addEntry('toastservice', 'ToastService.js', 'toastservice');
-//     addEntry('toasteventbus', 'ToastEventBus.js', 'toasteventbus');
-//     addEntry('usetoast', 'UseToast.js', 'usetoast');
-//     addEntry('terminalservice', 'TerminalService.js', 'terminalservice');
-// }
-
 addSFC();
-// addConfig();
 addUtils();
 addDirectives();
-// addApi();
-// addServices();
 
 export default entries;

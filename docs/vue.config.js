@@ -5,7 +5,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@': path.join(__dirname, '/../docs/src'),
+        '@': path.join(__dirname, '/src'),
         'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
         'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
         'lightvue/utils': path.join(__dirname, '/../core/utils'),

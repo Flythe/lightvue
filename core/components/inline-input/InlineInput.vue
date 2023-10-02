@@ -8,6 +8,7 @@ import { trueValueMixin } from 'lightvue/mixins';
 export default {
   name: 'LvInlineInput',
   mixins: [trueValueMixin],
+  emits: ['keydown'],
 
   props: {
     value: {
@@ -35,9 +36,6 @@ export default {
       default: false,
     },
   },
-  // created() {
-  //   this.$refs.editable.innerText = this.modelValue;
-  // },
   data() {
     return {
       localValue: '',
@@ -46,7 +44,6 @@ export default {
   watch: {
     modelValue: {
       handler: function (newValue) {
-        console.log(newValue, this.localValue);
         if (newValue !== this.localValue) {
           this.localValue = newValue;
         }

@@ -26,27 +26,13 @@
             <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
               <LvButton label="Documentation " push type="button" size="xl" icon-right="light-icon-chevron-right" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
-            <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
+            <nuxt-link :to="{ hash: '#features' }" class="hero-button lv-fluid">
               <lv-button label="Know More" push type="button" size="xl" icon-right="light-icon-plane-departure" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="hero-wave__wrap">
-      <svg viewBox="0 0 1440 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-wave__svg">
-        <path d="M1440 0H0V78.7375C265.747 120.349 397.724 150 718.001 150C1038.28 150 1152.27 131.392 1440 78.7375V0Z" fill="#143A56" />
-      </svg>
-      <div>
-        <div class="hero-cover-image">
-          <img src="/hero-bg.svg" alt="LightVue Illustration" />
-        </div>
-      </div>
-    </div> -->
-
-    <!-- <div class="hero-image">
-      <img src="/hero-bg.svg" alt="" />
-    </div> -->
   </section>
 </template>
 

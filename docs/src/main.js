@@ -10,7 +10,6 @@ import LvInput from 'lightvue/input';
 
 const app = createApp(App).use(router);
 app.config.globalProperties.$listeners = '';
-app.provide('$lightvue', { ripple: true, version: 3 });
 app.use(LvToast);
 app.use(LvNotification);
 

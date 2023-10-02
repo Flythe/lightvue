@@ -3,11 +3,12 @@
     <template #templateCode v-if="parts.template">{{ parts.template }}</template>
     <template #scriptCode v-if="parts.script">{{ parts.script }}</template>
     <template #styleCode v-if="parts.style">{{ parts.style }}</template>
-    <component :is="component" v-if="component" />
+    <component :is="component" v-if="component" markRaw />
   </DocsCard>
 </template>
 
 <script>
+import { markRaw } from "vue";
 import DocsCard from './DocsCard.vue';
 export default {
   components: {
@@ -19,7 +20,6 @@ export default {
   },
   data() {
     return {
-      // loading: true,
       component: null,
       tabs: [],
       parts: {},
@@ -27,38 +27,19 @@ export default {
   },
   created() {
     if (this.file) {
-      // this.component = () => import('lightvueDocs/example/' + this.file + '.vue');
-      //
       if (!this.component) {
         import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
-          this.component = comp.default;
+          this.component = markRaw(comp.default);
         });
       }
 
       Promise.all([
-        // import('@/' + this.file + '.vue').then(comp => {
-        //   this.component = comp.default;
-        // }),
         import('!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
           this.parseComponent(comp.default);
         }),
-      ]).then(() => {
-        // this.loading = false;
-      });
+      ]).then(() => {});
     }
   },
-  // watch: {
-  //   file: function (newValue) {
-  //     import(`${newValue}.vue`).then(loadedComponent => {
-  //       this.component = loadedComponent;
-  //     });
-  //   },
-  // },
-  // mounted: function () {
-  //   import(`${this.file}.vue`).then(loadedComponent => {
-  //     this.component = loadedComponent;
-  //   });
-  // },
   methods: {
     parseComponent(comp) {
       const template = this.parseTemplate('template', comp),

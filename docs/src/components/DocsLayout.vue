@@ -10,7 +10,7 @@
     <div class="page-wrap">
       <div class="page-content">
         <slot name="page-content">
-          <component :is="$lightvue && $lightvue.version === 3 ? 'router-view' : 'nuxt-child'" />
+          <router-view></router-view>
         </slot>
       </div>
       <app-footer />
@@ -26,7 +26,6 @@ import AppFooter from '@/components/AppFooter.vue';
 
 export default {
   scrollToTop: true,
-  inject: [ '$lightvue' ],
   components: {
     AppHeader,
     AppNavigationDrawer,

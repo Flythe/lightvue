@@ -92,6 +92,7 @@ import { trueValueMixin } from 'lightvue/mixins';
 export default {
   name: 'Chrome',
   mixins: [trueValueMixin, colorMixin],
+  emits: ['close'],
   props: {
     disableAlpha: {
       type: Boolean,

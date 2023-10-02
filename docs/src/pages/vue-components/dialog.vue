@@ -17,7 +17,7 @@ import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import DialogAPI from 'lightvueDocs/example/dialog/DialogAPI';
-import { COMPONENT_STATUS } from '@/public/data/constant.ts';
+import { COMPONENT_STATUS } from '@/constant.ts';
 
 export default {
   head: {

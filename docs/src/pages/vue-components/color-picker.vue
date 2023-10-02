@@ -19,7 +19,7 @@ import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import ColorpickerAPI from 'lightvueDocs/example/colorpicker/ColorpickerAPI';
-import { COMPONENT_STATUS } from '@/public/data/constant.ts';
+import { COMPONENT_STATUS } from '@/constant.ts';
 
 export default {
   head: {

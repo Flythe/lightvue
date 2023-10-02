@@ -126,6 +126,7 @@ export default {
 
     drag(event, offset) {
       const { offsetWidth } = this.$refs.inner;
+
       this.actualValue = this.round(this.valueFromBounds(offset.left, offsetWidth));
       this.emitInput(this.actualValue);
     },
@@ -155,7 +156,7 @@ export default {
 
     round(value) {
       const decimalFixed = this.step.toString().split('.')[1]?.length || 0;
-      return round(value, this._min, this._max, this._step).toFixed(decimalFixed);
+      return +round(value, this._min, this._max, this._step).toFixed(decimalFixed);
     },
   },
 

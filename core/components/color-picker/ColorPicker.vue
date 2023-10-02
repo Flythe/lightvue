@@ -28,6 +28,7 @@ import LvInput from 'lightvue/input';
 import { trueValueMixin } from 'lightvue/mixins';
 export default {
   name: 'LvColorpicker',
+  emits: ['close'],
   props: {
     label: {
       type: String,

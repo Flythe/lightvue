@@ -28,16 +28,11 @@ import { localValueMixin } from 'lightvue/mixins';
 export default {
   name: 'LvCheckbox',
   mixins: [localValueMixin],
-  // model: {
-  //   prop: 'modelValue',
-  //   event: 'change',
-  // },
+  emits: ['update:indeterminate', 'change'],
 
   props: {
     type: String,
     name: String,
-    // value: {},
-    // modelValue: {},
     trueValue: {},
     falseValue: {},
     checked: {}, // selected in case of radio
@@ -81,8 +76,6 @@ export default {
       if (this.modelValue !== undefined) {
         // radio
         if (this._type === 'radio') {
-          // return this.modelValue === this.value;
-          // return true;
           return this.checked;
         }
 
@@ -97,9 +90,7 @@ export default {
         return typeof this.modelValue === 'string' ? true : !!this.modelValue;
       }
 
-      // this.modelValue === undefined
       if (this.m_checked === undefined) return false;
-      // return this.m_checked = (typeof this.checked === 'string' ? true : !!this.checked );
       else return this.m_checked;
     },
     _disabled() {
@@ -200,8 +191,6 @@ export default {
   },
 
   mounted() {
-    // console.log(this.$el.classList);
-    // if (this.$vnode.data && !this.$vnode.data.staticClass && !this.toggle && !this.plain) this.default_mode = true; // REFACTORING
     if (!this.toggle && !this.plain) this.default_mode = true;
     if (this._indeterminate) this.$refs.input.indeterminate = true;
     this.$el.setAttribute(`lv-${this._type}`, '');
@@ -210,7 +199,6 @@ export default {
   methods: {
     updateInput(event) {
       if (this._type === 'radio') {
-        // this.$emit('change', this.value);
         this.updateModel(this.value);
         return;
       }
@@ -230,10 +218,8 @@ export default {
           newValue.splice(newValue.indexOf(this.value), 1);
         }
 
-        // this.$emit('change', newValue);
         this.updateModel(newValue);
       } else {
-        // this.$emit('change', isChecked ? (this._trueValue ? this.trueValue : true) : this._falseValue ? this.falseValue : false);
         this.updateModel(isChecked ? (this._trueValue ? this.trueValue : true) : this._falseValue ? this.falseValue : false);
       }
     },

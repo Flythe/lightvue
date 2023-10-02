@@ -4,15 +4,13 @@
       <div class="section-lighticons__image-wrapper">
         <img src="../../assets/images/section-lighticons.svg" alt="Light icon" class="section-lighticons__image" />
       </div>
-      <!-- <div class="section-lighticons__background"></div> -->
       <div class="section-lighticons__content">
         <div class="section-lighticons__content-heading">Packed with Premium Collection of LIGHT ICONS</div>
         <br />
         <div class="section-lighticons__content-description">Your imagination has no boundaries and so does our handpicked collection of premium &amp; light-weighted icons. Explore and choose icons from the vast landscape of <strong>LIGHT ICONS</strong>.</div>
         <br />
         <br />
-        <nuxt-link :to="{ hash: 'contact' }" class="page-button --dark">Know More</nuxt-link>
-        <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
+        <nuxt-link :to="{ hash: '#contact' }" class="page-button --dark">Know More</nuxt-link>
       </div>
     </div>
   </section>
@@ -73,15 +71,6 @@ export default {};
     }
   }
 }
-// @media (max-width: 934px) {
-//   .section-lighticons__wrapper {
-//     .section-lighticons__content {
-//       .section-lighticons__content-heading {
-//         font-size: 36px;
-//       }
-//     }
-//   }
-// }
 @media (max-width: 768px) {
   .section-lighticons__wrapper {
     flex-direction: column;
