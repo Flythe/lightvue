@@ -4,7 +4,7 @@ import scss from 'rollup-plugin-scss';
 import filesize from 'rollup-plugin-filesize';
 // import commonjs from 'rollup-plugin-commonjs';
 
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 
 // const fs = require('fs-extra');
 // const path = require('path');
