@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+    <toggle-switch-best-demo type="radio"></toggle-switch-best-demo>
     <template v-for="(demo, i) in demos">
       <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import ToggleSwitchBestDemo from 'lightvueDocs/example/input-toggle/ToggleSwitchBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -43,6 +45,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    ToggleSwitchBestDemo
   },
   data() {
     return {

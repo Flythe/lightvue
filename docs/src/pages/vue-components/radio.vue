@@ -1,6 +1,5 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <!-- <docs-card-vue title="Basic" file="checkbox/CheckboxDemo" /> -->
     <checkbox-best-demo type="radio"></checkbox-best-demo>
     <template v-for="demo in demos">
       <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
