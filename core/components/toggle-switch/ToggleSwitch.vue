@@ -57,8 +57,23 @@ export default {
       default: 'right'
     },
     icon: String,
-    checkedIcon: String,
     ariaLabelledBy: null,
+    uncheckedThumbColor: {
+      type: String,
+      default: '#cbd5e0'
+    },
+    checkedThumbColor: {
+      type: String,
+      default: '#38b2ac'
+    },
+    uncheckedTrackColor: {
+      type: String,
+      default: '#edf2f7'
+    },
+    checkedTrackColor: {
+      type: String,
+      default: '#d7efed'
+    }
   },
   data() {
     return {
@@ -66,6 +81,12 @@ export default {
     };
   },
   computed: {
+    trackColor() {
+      return this.modelValue ? this.checkedTrackColor : this.uncheckedTrackColor;
+    },
+    thumbColor() {
+      return this.modelValue ? this.checkedThumbColor : this.uncheckedThumbColor;
+    },
     modelValue() {
       return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
     },
@@ -84,22 +105,13 @@ export default {
     updateValue(event) {
       if (!this.disabled) {
         this.$emit("input-native", event);
-        this.$emit("input", !this.modelValue); // Only for Vue 2
-        this.$emit("update:modelValue", !this.modelValue); // Only for Vue 3
+        this.$emit("update:modelValue", !this.modelValue);
         this.$emit("change", event);
         this.$emit("click", event);
 
         this.$refs.input.focus();
       }
     },
-    // onClick(event) {
-    //   if (!this.disabled) {
-    //     this.$emit("click", event);
-    //     this.$emit("input", !this.modelValue);
-    //     this.$emit("change", event);
-    //     this.$refs.input.focus();
-    //   }
-    // },
     onFocus(event) {
       this.focused = true;
       this.$emit("focus", event);
@@ -113,4 +125,30 @@ export default {
 </script>
 <style lang="scss">
 @import "./ToggleSwitch.scss";
+
+.d-toggle__wrapper {
+  .d-toggle__inner {
+    .d-toggle__track {
+      // background: #edf2f7;
+      background: v-bind(trackColor);
+    }
+
+    .d-toggle__thumb {
+      // background-color: #cbd5e0;
+      background: v-bind(thumbColor);
+    }
+
+    &.--checked {
+      .d-toggle__track {
+        // background: #d7efed;
+        background: v-bind(trackColor);
+      }
+
+      .d-toggle__thumb {
+        // background: #38b2ac;
+        background: v-bind(thumbColor);
+      }
+    }
+  }
+}
 </style>
