@@ -226,11 +226,6 @@ export default {
     },
   },
   computed: {
-    listeners() {
-      return {
-        ...this.$listeners,
-      };
-    },
     maskClass() {
       return ['lv-dialog-mask', this.getPositionClass()];
     },

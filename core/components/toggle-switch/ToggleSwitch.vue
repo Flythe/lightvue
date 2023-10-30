@@ -70,16 +70,6 @@ export default {
     modelValue() {
       return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
     },
-
-    listeners() {
-      return this.$listeners
-        ? {
-            // Depreciated in Vue 3
-            ...this.$listeners,
-            click: (event) => this.updateValue(event),
-          }
-        : {};
-    },
     containerClass() {
       return [
         "d-toggle__inner",

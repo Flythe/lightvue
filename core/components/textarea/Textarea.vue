@@ -94,14 +94,6 @@ export default {
     },
   },
   computed: {
-    listeners() {
-      return {
-        ...this.$listeners,
-        input: event => {
-          this.updateModel(event);
-        },
-      };
-    },
     filled() {
       return this.modelValue != null && this.modelValue.toString().length > 0;
     },

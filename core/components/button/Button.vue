@@ -100,14 +100,6 @@ export default {
         '--inline': this.inline,
       };
     },
-    listeners() {
-      return this.$listeners
-        ? {
-            // Depreciated in Vue 3
-            ...this.$listeners,
-          }
-        : {};
-    },
   },
   // directives: {
   //     'ripple': Ripple

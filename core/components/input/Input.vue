@@ -103,15 +103,6 @@ export default {
       // return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
       return this.value ? this.value : this.$attrs.modelValue ? this.$attrs.modelValue : null;
     },
-    listeners() {
-      return this.$listeners
-        ? {
-            // Depreciated in Vue 3
-            ...this.$listeners,
-            input: event => this.inputEventHandler(event),
-          }
-        : {};
-    },
     filled() {
       return this.modelValue != null && this.modelValue.toString().length > 0;
     },
