@@ -11,11 +11,11 @@
           </div>
         </slot>
       </div>
-      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.inputEventHandler" :name="name" :id="name" v-if="editable" />
+      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" @input="this.inputEventHandler" :name="name" :id="name" v-if="editable" />
       <div v-else class="lv-input__default">
         <slot>{{ modelValue || $attrs.placeholder }}</slot>
         <div class="lv-hidden-accessible">
-          <input type="text" readonly :value="modelValue" v-bind="$attrs" v-on="listeners" :name="name" />
+          <input type="text" readonly :value="modelValue" v-bind="$attrs" :name="name" />
         </div>
       </div>
       <div class="lv-input__append" v-if="$slots['append'] || iconRight || clearable">

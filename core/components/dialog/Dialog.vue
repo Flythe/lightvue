@@ -1,7 +1,7 @@
 <template>
   <div ref="mask" :class="maskClass" v-if="maskVisible" @click="closable ? close() : ''">
     <transition name="lv-dialog" @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave" @after-leave="onAfterLeave" @appear="onAppear">
-      <div ref="dialog" :class="dialogClass" :style="dialogStyle" v-if="modelValue" v-bind="$attrs" v-on="listeners" role="dialog" :aria-labelledby="ariaLabelledById" :aria-modal="modal" @click.stop>
+      <div ref="dialog" :class="dialogClass" :style="dialogStyle" v-if="modelValue" v-bind="$attrs" role="dialog" :aria-labelledby="ariaLabelledById" :aria-modal="modal" @click.stop>
         <div class="lv-dialog-header" v-if="showHeader">
           <slot name="header">
             <span :id="ariaLabelledById" class="lv-dialog-title" v-if="header">{{ header }}</span>

@@ -14,7 +14,6 @@
         class="d-toggle__input"
         ref="input"
         v-bind="$attrs"
-        v-on="listeners"
         :id="inputId"
         :name="name"
         :checked="modelValue"
