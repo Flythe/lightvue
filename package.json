@@ -45,7 +45,9 @@
     "./toast": "./core/components/toast/index.js",
     "./toggle-switch": "./core/components/toggle-switch/index.js",
     "./ripple": "./core/directives/ripple/index.js",
-    "./tooltip": "./core/directives/tooltip/index.js"
+    "./tooltip": "./core/directives/tooltip/index.js",
+    "./utils": "./core/utils/index.js",
+    "./mixins": "./core/mixins/index.js"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
