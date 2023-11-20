@@ -29,6 +29,7 @@
 import { uniqueComponentId } from 'lightvue/utils';
 import { DomHandler } from 'lightvue/utils';
 
+import LvButton from 'lightvue/button';
 import Ripple from 'lightvue/ripple';
 import { trueValueMixin, preventBrowserBackMixin } from 'lightvue/mixins';
 
