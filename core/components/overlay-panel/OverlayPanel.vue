@@ -12,11 +12,15 @@
 <script>
 import { ConnectedOverlayScrollHandler } from 'lightvue/utils';
 import { preventBrowserBackMixin } from 'lightvue/mixins';
+import LvButton from 'lightvue/button';
 
 import { DomHandler } from 'lightvue/utils';
 
 export default {
-  name: 'LvOverlaypanel',
+  name: 'LvOverlayPanel',
+  components: {
+    LvButton
+  },
   mixins: [preventBrowserBackMixin],
   props: {
     dismissable: {
